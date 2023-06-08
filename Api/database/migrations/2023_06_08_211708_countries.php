@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->id();
+            $table->foreignUuid('id');
             $table->string('name');
             $table->string('capital');
             $table->string('region');
             $table->string('subregion');
             $table->string('languages');
             $table->string('maps');
-            $table->number('population');
+            $table->integer('population');
+            $table->integer('area');
             $table->string('flag');
             $table->timestamps();
         });
