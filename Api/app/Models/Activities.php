@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Activities extends Model
 {
     use HasFactory;
+
+    // Relaciones de las tablas
+    public function countries () {
+        return $this->belongsTo(Countries::class);
+    }
 }
