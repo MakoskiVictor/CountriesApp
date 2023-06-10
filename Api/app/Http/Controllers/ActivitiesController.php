@@ -14,7 +14,8 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        //
+        // Para recuperar todos los registros de la tabla activities
+        return activities::all();
     }
 
     /**
