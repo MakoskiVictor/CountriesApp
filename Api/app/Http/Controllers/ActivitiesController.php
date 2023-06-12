@@ -6,6 +6,7 @@ use App\Models\activities;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreactivitiesRequest;
 use App\Http\Requests\UpdateactivitiesRequest;
+use Ramsey\Uuid\Uuid;
 
 class ActivitiesController extends Controller
 {
@@ -31,7 +32,21 @@ class ActivitiesController extends Controller
      */
     public function store(StoreactivitiesRequest $request)
     {
-        //
+        // CREAR ACTIVIDAD
+        dd($request->all()); // Para que me devuleva los valores asignados
+        $uuid = Uuid::uuid4()->toString();
+
+        $activity = new activities();
+
+        $activity->id = $uuid;
+        $activity->name = $request->name;
+        $activity->duration = $request->duration;
+        $activity->difficulty = $request->difficulty;
+        $activity->season = $request->season;
+
+        $activity-> save();
+
+        return $activity;
     }
 
     /**
