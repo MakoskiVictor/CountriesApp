@@ -48,6 +48,7 @@ class CountriesController extends Controller
             // LLENAR LA DATABASE CON NUEVA INFO
             foreach ($filteredCountries as $fc) {
                 $uuid = Uuid::uuid4()->toString();
+            
                 
                 $country = new countries();
                 $country->id = $uuid;
@@ -90,9 +91,11 @@ class CountriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(countries $countries)
+    public function show(countries $country)
     {
-        //
+        // DEVOLVER SOLAMENTE UN PAÍS (Por id)
+        return $country;
+
     }
 
     /**
