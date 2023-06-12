@@ -63,7 +63,7 @@ class CountriesController extends Controller
                 $country->save();
             }
             
-            return response()->json(['message' => 'La base de datos se ha llenado correctamente']);
+            return countries::All();
 
 
         } else {
