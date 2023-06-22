@@ -15,6 +15,6 @@ class Countries extends Model
 
     // Relaciones de las tablas
     public function activities () {
-        return $this->belongsTo(Activities::class);
+        return $this->belongsToMany(Activities::class, 'country_activity');
     }
 }
