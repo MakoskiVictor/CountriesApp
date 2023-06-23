@@ -18,7 +18,7 @@ return new class extends Migration
             // Claves foraneas para eliminar un registro
 
             $table->foreing('country_id')->references('id')->on('countries')->onDelete('cascade');
-            $table->foreing('country_id')->references('id')->on('activities')->onDelete('cascade');
+            $table->foreing('activity_id')->references('id')->on('activities')->onDelete('cascade');
         });
     }
 
